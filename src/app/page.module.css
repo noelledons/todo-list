@@ -65,3 +65,37 @@
   color: #888;
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    max-width: 450px;
+    padding: 20px;
+  }
+
+  .inputbox {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    max-width: 400px; 
+  }
+
+  .headerStyling {
+    font-size: 2rem; 
+  }
+
+  .inputbox {
+    width: 100%; 
+    padding: 10px 8px; 
+    font-size: 12px;
+  }
+
+  .buttonStyling {
+    padding: 6px 10px; 
+    font-size: 12px; 
+  }
+}

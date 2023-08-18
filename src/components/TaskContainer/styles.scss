@@ -7,8 +7,17 @@
     box-sizing: border-box;
     border-radius: 5px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+    &__headercontainer {
+      width: auto;
+    }
+
+    &__header {
+      color: white;
+      font-weight: 300;
+      font-size: 2rem;
+      text-align: center;
+    }
   }
 
-  span {
-    color: white
-  }
+  
