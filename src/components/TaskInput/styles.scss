@@ -1,0 +1,42 @@
+.taskinput {
+  display: flex;
+  justify-content: space-between;
+  border:2px solid white;
+  border-radius: 12px;
+  margin: 6% 0;
+  width: auto;
+
+  &__listitems {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding-bottom: 5px;
+  }
+
+  &__listitemstitle {
+    color: white;
+  }
+
+  &__icon {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color:white;
+  }
+
+  &__section {
+    display: flex;
+    gap: 4px;
+  
+  }
+  
+  .checkbox{
+    display: flex;
+  }
+  // &__icon i {
+  //   font-size: 16px;
+  //   color: #bbb;
+  //   margin-right: 20px;
+  // }
+}

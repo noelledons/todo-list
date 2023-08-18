@@ -1,12 +1,16 @@
 "use client";
 
 import TaskContainer from "@/components/TaskContainer";
-import "./styles.scss"
+import TaskContext from "@/context/tasklistContext";
+import "./styles.scss";
+
 const TodoPage = () => {
   return (
-    <div className="todopage">
-      <TaskContainer />
-    </div>
+    <TaskContext>
+      <div className="todopage">
+        <TaskContainer />
+      </div>
+    </TaskContext>
   );
 };
 

@@ -1,0 +1,21 @@
+.tasklist {
+  width: 90%;
+  // margin: auto;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+
+  &__todos {
+    margin: 0;
+    padding:0;
+  }
+  
+  &__notasks {
+    color: #777;
+    text-align: center;
+    font-family: "Noto Sans JP", "sans-serif";
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+}

@@ -1,6 +1,9 @@
-import { createContext, useState, useEffect } from "react";
+"use client"
 
-export const TaskListData = createContext(null);
+import { createContext, useState, useEffect, useCallback } from "react";
+import {v4 as uuidv4} from "uuid";
+
+export const TaskListData = createContext();
 
 function TaskContext({ children }) {
   const [tasks, setTasks] = useState([]);
@@ -13,7 +16,8 @@ function TaskContext({ children }) {
     purpose: retrieve an array of tasks from the browser's local storage if it exists & if not, initialise an empty array
     */
    setTasks(initialState)
-  }, [tasks]);
+   //using tasks
+  }, []);
 
   const addTask = (title) => {
     setTasks([...tasks, { title, id: uuidv4() }]);
