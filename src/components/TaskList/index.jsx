@@ -10,14 +10,14 @@ const TaskList = () => {
   return (
     <div className="tasklist">
       {tasks.length ? (
-        <ul className="tasklist_todos">
+        <ul className="tasklist__todos">
           {tasks.map((task) => {
             const isTaskChecked = checkedTasks.includes(task.id);
             return <TaskInput task={task} key={task.id} isChecked={isTaskChecked}/>;
           })}
         </ul>
       ) : (
-        <div className="tasklist_notasks"> No Tasks </div>
+        <div className="tasklist__notasks"> No Tasks </div>
       )}
     </div>
   );

@@ -2,25 +2,14 @@
 
 import styles from "./page.module.css";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Home() {
   const [username, setUsername] = useState("");
-  // const router = useRouter();
 
   const handleInputChange = (event) => {
     setUsername(event.target.value);
   };
-
-  // const handleSubmit = () => {
-  //   if (username.trim() !== "") {
-  //     router.push({
-  //       pathname: `/todolist?username=${encodeURIComponent(username)}`,
-  //       query: { username: "username"},
-  //     });
-  //   }
-  // };
 
   return (
     <div className={styles.main}>
@@ -44,7 +33,6 @@ export default function Home() {
               className={`${styles.buttonStyling} ${
                 username.trim() === "" ? styles.disabledButton : ""
               }`}
-              // onClick={handleSubmit}
               disabled={username.trim() === ""}
             >
               Submit

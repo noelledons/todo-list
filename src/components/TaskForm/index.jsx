@@ -42,10 +42,10 @@ const TaskForm = () => {
         className="taskform__input"
       />
       <div className="taskform__buttons">
-        <button type="submit" className="taskform__buttons-editadd" onClick={handleSubmit} disabled={title.trim() === ""}> 
+        <button type="submit" className="taskform__buttons-styling" onClick={handleSubmit} disabled={title.trim() === ""}> 
           {editItem ? "Edit Task" : "Add Task"}
         </button>
-        <button className="taskform__buttons-clear" onClick={clearList}>
+        <button className="taskform__buttons-styling" onClick={clearList}>
           Clear
         </button>
       </div>

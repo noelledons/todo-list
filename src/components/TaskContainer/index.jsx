@@ -3,6 +3,8 @@ import { useSearchParams } from "next/navigation";
 import "./styles.scss";
 import TaskForm from "../TaskForm";
 import TaskList from "../TaskList";
+import Modal from "../Modal";
+import Link from "next/link";
 
 const TaskContainer = () => {
   const searchParams = useSearchParams();
@@ -11,13 +13,20 @@ const TaskContainer = () => {
   return (
     <div className="taskcontainer">
       <div className="taskcontainer__headercontainer">
-        <h1 className="taskcontainer__header"> {user}{`'s`} To-do List</h1>
+        <h1 className="taskcontainer__header">
+          {" "}
+          {user}
+          {`'s`} To-do List
+        </h1>
       </div>
       <div>
         <TaskForm />
       </div>
       <div>
         <TaskList />
+      </div>
+      <div className="taskcontainer__button">
+        <Modal />
       </div>
     </div>
   );

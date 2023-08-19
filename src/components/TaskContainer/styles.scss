@@ -1,23 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import "../../globalStyling.scss";
+
 .taskcontainer {
-    background-color: #292f38;
-    width: 25%;
-    min-width: 450px;
-    height: 600px;
-    padding: 30px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fdfdfe, #ffffff);
+  width: auto;
+  height: 600px;
+  padding: 3% 5%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: $box-shadow-dark;
 
-    &__headercontainer {
-      width: auto;
-    }
 
-    &__header {
-      color: white;
-      font-weight: 300;
-      font-size: 2rem;
-      text-align: center;
-    }
+  &__header {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;;
+    color: $main-text;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
   }
 
-  
+  &__button {
+    margin-top: auto;
+  }
+
+ 
+}

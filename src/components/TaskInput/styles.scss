@@ -1,28 +1,33 @@
+@import "../../globalStyling.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+
 .taskinput {
   display: flex;
   justify-content: space-between;
-  border:2px solid white;
-  border-radius: 12px;
-  margin: 6% 0;
-  width: auto;
+  width: 350px;
+  box-shadow: $box-shadow-dark;
+  border-radius: 20px;
+  margin: 3% 2%;
+  padding: 3% 2%;
 
   &__listitems {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
-    padding-bottom: 5px;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color:$main-text;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
   }
 
-  &__listitemstitle {
-    color: white;
-  }
 
   &__icon {
     cursor: pointer;
     background-color: transparent;
     border: none;
     outline: none;
-    color:white;
+    color:$main-text;
   }
 
   &__section {
@@ -33,10 +38,20 @@
   
 }
 
+//styling for checkbox + list item
 .checkbox{
   display: flex;
+  inline-size: 300px;
+  overflow: hidden;
 }
 
 .checked {
   text-decoration: line-through;
+  color: #969696;
+  .taskinput__listitems {
+    color: #969696;
+  }
+  .taskinput__icon {
+    color: #969696;
+  }
 }
