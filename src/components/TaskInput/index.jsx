@@ -5,13 +5,17 @@ import { TaskListData } from "@/context/tasklistContext";
 import "./styles.scss";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 
-const TaskInput = ({ task }) => {
-  const { removeTask, findItem } = useContext(TaskListData);
+const TaskInput = ({ task, isChecked }) => {
+  const { removeTask, findItem, toggleChecked } = useContext(TaskListData);
 
   return (
-    <div className="taskinput">
+    <div className={`taskinput ${isChecked ? "checked" : ""}`}>
       <div className="taskinput__section checkbox">
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={() => toggleChecked(task.id)}
+        />
         <li className="taskinput__listitems">
           <span className="taskinput__listitemstitle">{task.title}</span>
           <div className="taskinput__buttons"></div>

@@ -8,6 +8,7 @@ export const TaskListData = createContext();
 function TaskContext({ children }) {
   const [tasks, setTasks] = useState([]);
   const [editItem, setEditItem] = useState(null);
+  const [checkedTasks, setCheckedTasks] = useState([]); 
 
   useEffect(() => {
     const initialState = JSON.parse(localStorage.getItem("tasks")) || [];  
@@ -44,6 +45,16 @@ function TaskContext({ children }) {
     setEditItem(null);
   };
 
+  const toggleChecked = (id) => {
+    setCheckedTasks((prevCheckedTasks) => {
+      if (prevCheckedTasks.includes(id)) {
+        return prevCheckedTasks.filter((taskId) => taskId !== id);
+      } else {
+        return [...prevCheckedTasks, id];
+      }
+    });
+  };
+
   return (
     <TaskListData.Provider
       value={{
@@ -54,6 +65,8 @@ function TaskContext({ children }) {
         findItem,
         editTask,
         editItem,
+        toggleChecked, 
+        checkedTasks,
       }}
     >
       {children}
