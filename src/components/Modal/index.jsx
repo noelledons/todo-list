@@ -30,11 +30,11 @@ function Modal() {
       {isModalOpen && (
         <div className="modal__container">
           <div className="modal__content">
-            <p>Do you want to proceed?</p>
+            <p>Are you sure you want to go back? This will not be saved.</p>
             <div className="modal__buttons">
               {" "}
               <button className="modal__buttons-yes" onClick={handleYesClick}>Yes</button >
-              <button className="modal__buttons-no"  onClick={handleNoCloseClick}>No, Close</button>
+              <button className="modal__buttons-no"  onClick={handleNoCloseClick}>Not Yet!</button>
             </div>
           </div>
         </div>

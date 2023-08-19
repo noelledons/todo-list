@@ -4,7 +4,6 @@ import "./styles.scss";
 import TaskForm from "../TaskForm";
 import TaskList from "../TaskList";
 import Modal from "../Modal";
-import Link from "next/link";
 
 const TaskContainer = () => {
   const searchParams = useSearchParams();
