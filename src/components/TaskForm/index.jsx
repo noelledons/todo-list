@@ -5,8 +5,8 @@ import { TaskListData } from "@/context/tasklistContext";
 import "./styles.scss"
 
 const TaskForm = () => {
-  const { addTask, clearList, editItem, editTask } = useContext(TaskListData);
-  const [title, setTitle] = useState("");
+  const { addTask, clearList, editItem, editTask, title, setTitle } = useContext(TaskListData);
+  
 
   const handleChange = (e) => {
     setTitle(e.target.value);
@@ -29,7 +29,7 @@ const TaskForm = () => {
     } else {
       setTitle(" ");
     }
-  }, [editItem]);
+  }, [editItem, setTitle]);
 
   return (
     <div className="taskform">
@@ -42,11 +42,11 @@ const TaskForm = () => {
         className="taskform__input"
       />
       <div className="taskform__buttons">
-        <button type="submit" className="taskform__buttons-styling" onClick={handleSubmit} disabled={title.trim() === ""}> 
-          {editItem ? "Edit Task" : "Add Task"}
+        <button type="submit" className={`taskform__buttons-styling ${title.trim() === "" ? "disabled" : ""}`} onClick={handleSubmit} disabled={title.trim() === ""}> 
+          {editItem ? "Save" : "Add Task"}
         </button>
         <button className="taskform__buttons-styling" onClick={clearList}>
-          Clear
+          Clear All
         </button>
       </div>
    </div>

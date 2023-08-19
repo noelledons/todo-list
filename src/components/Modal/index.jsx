@@ -26,7 +26,7 @@ function Modal() {
 
   return (
     <div className="modal">
-      <button onClick={openModal}>Go Back</button>
+      <button className="modal__mainbutton" onClick={openModal}>Go Back</button>
       {isModalOpen && (
         <div className="modal__container">
           <div className="modal__content">

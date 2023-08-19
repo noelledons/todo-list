@@ -1,6 +1,5 @@
 @import "../../globalStyling.scss";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 
 .taskinput {
   display: flex;
@@ -16,30 +15,35 @@
     justify-content: space-between;
     overflow: hidden;
     font-size: 0.9rem;
-    color:$main-text;
-    font-family: 'Roboto', sans-serif;
+    color: $main-text;
+    font-family: "Roboto", sans-serif;
     align-items: center;
   }
-
 
   &__icon {
     cursor: pointer;
     background-color: transparent;
     border: none;
     outline: none;
-    color:$main-text;
+    color: $main-purple;
   }
 
   &__section {
     display: flex;
     gap: 4px;
-  
   }
-  
+
+  // &__checkboxStyling {
+  //   width: 15px;
+  //   height: 15px;
+  //   margin: 4px;
+  //   border-radius: 20px;
+  //   border: 2px solid red !important;
+  // }
 }
 
 //styling for checkbox + list item
-.checkbox{
+.checkboxSection {
   display: flex;
   inline-size: 300px;
   overflow: hidden;
@@ -54,4 +58,42 @@
   .taskinput__icon {
     color: #969696;
   }
+  input[type="checkbox"]:checked::before {
+    content: "\2713";
+    color: #969696;
+    transform: scale(1);
+    // border: 2px solid #969696;
+  }
+}
+
+.disabled {
+  background: #969696;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border: 2px solid $main-purple;
+  border-radius: 23px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  position: absolute;
+  content: "";
+  font-size: 1rem;
+  line-height: 1rem;
+  color: $main-purple;
+  transform: scale(0);
+  left: 2px;
+}
+
+input[type="checkbox"]:checked {
+  border: 2px solid #969696;
+  background-color: $white;
 }

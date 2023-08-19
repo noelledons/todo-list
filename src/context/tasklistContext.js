@@ -9,6 +9,7 @@ function TaskContext({ children }) {
   const [tasks, setTasks] = useState([]);
   const [editItem, setEditItem] = useState(null);
   const [checkedTasks, setCheckedTasks] = useState([]); 
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const initialState = JSON.parse(localStorage.getItem("tasks")) || [];  
@@ -29,7 +30,9 @@ function TaskContext({ children }) {
   };
 
   const clearList = () => {
-    setTasks([]);
+    setTasks([])
+    setEditItem(null)
+    setTitle("")
   };
 
   const findItem = (id) => {
@@ -67,6 +70,8 @@ function TaskContext({ children }) {
         editItem,
         toggleChecked, 
         checkedTasks,
+        title,
+        setTitle,
       }}
     >
       {children}

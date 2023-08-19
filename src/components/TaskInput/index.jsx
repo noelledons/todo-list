@@ -10,11 +10,12 @@ const TaskInput = ({ task, isChecked }) => {
 
   return (
     <div className={`taskinput ${isChecked ? "checked" : ""}`}>
-      <div className="taskinput__section checkbox">
+      <div className="taskinput__section checkboxSection">
         <input
           type="checkbox"
           checked={isChecked}
           onChange={() => toggleChecked(task.id)}
+          className="taskinput__checkboxStyling"
         />
         <li className="taskinput__listitems">
           <span className="taskinput__listitemstitle">{task.title}</span>
