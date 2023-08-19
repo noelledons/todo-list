@@ -1,26 +1,23 @@
-"use client";
-
 import React from "react";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import "./styles.scss";
 import TaskForm from "../TaskForm";
 import TaskList from "../TaskList";
 
 const TaskContainer = () => {
-  const router = useRouter();
-  const { username } = router.query || {};
-  console.log(username);
+  const searchParams = useSearchParams();
+  const user = searchParams.get("username");
 
   return (
     <div className="taskcontainer">
       <div className="taskcontainer__headercontainer">
-        <h1 className="taskcontainer__header">{username} To-do List</h1>
+        <h1 className="taskcontainer__header"> {user}{`'s`} To-do List</h1>
       </div>
       <div>
-        <TaskForm/>
+        <TaskForm />
       </div>
       <div>
-      <TaskList/>
+        <TaskList />
       </div>
     </div>
   );
